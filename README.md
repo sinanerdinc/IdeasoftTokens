@@ -26,6 +26,10 @@ Instance alırken az önce indirdiğiniz chrome driver yolunu verin.
 # Çalıştır
 
 ```
-python3 ideashop_tokens.py --site=https://testa.myideasoft.com --u=yonetici --p=sifre123
+python3 ideashop_tokens.py --site=https://test.myideasoft.com --u=yonetici --p=sifre123
 ```
 şeklinde kullanabilirsiniz.
+
+site => web sitesi.
+u => admin kullanıcı adı.
+p => admin kullanıcı şifresi.
