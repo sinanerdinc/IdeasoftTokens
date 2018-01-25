@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 import time
 import json
+import argparse
 
 class GetTokensFromIdeaApi():
     """access_token ve refresh_token değerlerini hızlıca oluşturup geri döner."""
@@ -89,9 +90,23 @@ class GetTokensFromIdeaApi():
         self.browser.close()
 
 ## Başlıyoruz.
-testaa01 = GetTokensFromIdeaApi("https://test.myideasoft.com","/home/sinan/Downloads/selenium/chromedriver")
+parser = argparse.ArgumentParser()
+parser.add_argument('--site')
+parser.add_argument('--u')
+parser.add_argument('--p')
+args = parser.parse_args()
+
+if args.site:
+    site = args.site
+if args.u:
+    username = args.u
+if args.p:
+    password = args.p
+
+
+testaa01 = GetTokensFromIdeaApi(site,"/home/sinan/Downloads/selenium/chromedriver")
 testaa01.open_url("/admin")
-testaa01.login_admin_panel("yonetici","1234567")
+testaa01.login_admin_panel(username,password)
 testaa01.open_url("/admin/client/list")
 testaa01.add_new_client()
 testaa01.add_permission()
