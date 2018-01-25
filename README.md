@@ -30,6 +30,7 @@ python3 ideashop_tokens.py --site=https://test.myideasoft.com --u=yonetici --p=s
 ```
 şeklinde kullanabilirsiniz.
 
-site => web sitesi.
-u => admin kullanıcı adı.
-p => admin kullanıcı şifresi.
+
+- site => web sitesi.
+- u => admin kullanıcı adı.
+- p => admin kullanıcı şifresi.
