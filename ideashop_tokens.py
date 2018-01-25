@@ -30,23 +30,23 @@ class GetTokensFromIdeaApi():
 
     def add_new_client(self):
         self.browser.find_element_by_xpath('//*[@id="Grid_client_grid_GridData"]/div[1]/div[1]/div[3]/a').click();
-        time.sleep(1)
+        time.sleep(2)
         self.browser.find_element_by_id("name").send_keys("Test")
         self.browser.find_element_by_id("redirect_uri").send_keys(self.base_url+"/info.html")
         self.browser.find_element_by_id("buton1").click()
-        time.sleep(1)
+        time.sleep(2)
 
 
-    def add_permission(self):
+    def add_permission(self,username):
         # izin sayfasına git
         self.browser.find_element_by_xpath('//*[@id="Grid_client_grid_Row0-Column5"]/a').click()
-        time.sleep(1)
+        time.sleep(2)
             #İzin ekle
         self.browser.find_element_by_xpath('//*[@id="Grid_client_permission_grid_GridData"]/div[3]/div[1]/div[3]/a').click();
-        time.sleep(1)
+        time.sleep(2)
             # Kullanıcı adı seç
         selectUser = Select(self.browser.find_element_by_id('userId'))
-        selectUser.select_by_visible_text('yonetici')
+        selectUser.select_by_visible_text(username)
             # Katalog izni
         selectCatalog = Select(self.browser.find_element_by_id('catalog'))
         selectCatalog.select_by_visible_text('Okuma/Yazma')
@@ -109,7 +109,7 @@ testaa01.open_url("/admin")
 testaa01.login_admin_panel(username,password)
 testaa01.open_url("/admin/client/list")
 testaa01.add_new_client()
-testaa01.add_permission()
+testaa01.add_permission(username)
 testaa01.open_url("/admin/client/list")
 testaa01.get_app_info()
 testaa01.get_code()
