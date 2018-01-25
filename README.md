@@ -19,18 +19,13 @@ adresinden chrome driver indirin ve zipten çıkartın.
 Artık kodları kullanabilirsiniz.
 
 ```
-testaa01 = GetTokensFromIdeaApi("https://test.myideasoft.com","/home/sinan/Downloads/selenium/chromedriver")
+testaa01 = GetTokensFromIdeaApi(site,"/home/sinan/Downloads/selenium/chromedriver")
 ```
-Instance alırken alan adı ve az önce indirdiğiniz chrome driver yolunu verin. Admin paneline girerken kullanıcı adınızı ve şifresiniz login_admin_panel methodu içine girmeyi girmeyi unutmayın.
+Instance alırken az önce indirdiğiniz chrome driver yolunu verin.
+
+# Çalıştır
+
 ```
-testaa01.open_url("/admin")
-testaa01.login_admin_panel("yonetici","1234567")
-testaa01.open_url("/admin/client/list")
-testaa01.add_new_client()
-testaa01.add_permission()
-testaa01.open_url("/admin/client/list")
-testaa01.get_app_info()
-testaa01.get_code()
-testaa01.get_tokens()
-testaa01.close_connection()
+python3 ideashop_tokens.py --site=https://testa.myideasoft.com --u=yonetici --p=sifre123
 ```
+şeklinde kullanabilirsiniz.
